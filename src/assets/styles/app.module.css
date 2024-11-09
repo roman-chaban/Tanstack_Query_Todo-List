@@ -1,0 +1,85 @@
+.taskList {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    padding: 0;
+    gap: 0.5rem;
+    height: 300px;
+}
+
+.taskList > li {
+    list-style-type: none;
+    margin: 0;
+    padding: 1rem;
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+    cursor: pointer;
+}
+
+.taskList > li:hover {
+    transform: scale(1.02);
+    background-color: #f1f1f1;
+}
+
+.taskList > li:active {
+    transform: scale(0.98);
+    background-color: #ececec;
+}
+
+.taskList > li > h4 {
+    font-weight: 600;
+    font-size: 1.2rem;
+    margin: 0;
+    color: #333;
+}
+
+.taskList > li.completed {
+    background-color: #e7ffe7;
+    border-color: #a5d6a7;
+}
+
+.taskList > li.completed > h4 {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.paginationButtons {
+    margin-block-start: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    & > button {
+        width: 100px;
+        padding: 10px;
+        border-radius: 14px;
+        background-color: #4caf50;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+
+        &:disabled {
+            background-color: #d3d3d3;
+            cursor: not-allowed;
+        }
+
+        &:hover {
+            background-color: #45a049;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+        &:active {
+            background-color: #388e3c;
+            transform: translateY(2px);
+        }
+    }
+}
